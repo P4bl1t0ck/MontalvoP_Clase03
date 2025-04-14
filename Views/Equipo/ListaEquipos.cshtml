@@ -1,72 +1,60 @@
 ﻿@model IEnumerable<MontalvoP_Clase03.Models.Equipo>
 
 @{
-    ViewData["Title"] = "ListEquipos";
+	ViewData["Title"] = "ListEquipos";
 }
 
 <h1>ListEquipos</h1>
 
 <p>
-    <a class="class" asp-action="Create">Create New</a>
+	<a class="class" asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PartidosJugados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PartidosGanados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PartidosEmpatados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PartidosPerdidos)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Puntos)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PartidosJugados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PartidosGanados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PartidosEmpatados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PartidosPerdidos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Puntos)
-            </td>
-            <td>
-                <!--This is the new thing that i change, becase i was too lazy for search the correct word in google-->
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  },new {@class ="btn btn-succcess"}) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-info"}) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>class ="btn btn-succces"
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Id)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Nombre)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.PartidosJugados)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.PartidosGanados)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.PartidosEmpatados)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.PartidosPerdidos)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Puntos)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<!--I just Organize this, beacause i want, and is my code, and i can´t read like it was after.-->
+				<td>@Html.DisplayFor(modelItem => item.Id)</td>
+				<td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+				<td>@Html.DisplayFor(modelItem => item.PartidosJugados)</td>
+				<td>@Html.DisplayFor(modelItem => item.PartidosGanados)</td>
+				<td>@Html.DisplayFor(modelItem => item.PartidosEmpatados)</td>
+				<td>@Html.DisplayFor(modelItem => item.PartidosPerdidos)</td>
+				<td>@Html.DisplayFor(modelItem => item.Puntos)</td>
+				<td>
+					<!--This is the new thing that i change, becase i was too lazy for search the correct word in google-->
+					@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-succcess btn-sm" }) |
+					@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-info" }) |
+					@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+				</td>
+			</tr>
+		}
+	</tbody>class ="btn btn-succces"
 </table>
