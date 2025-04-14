@@ -61,7 +61,8 @@
                 @Html.DisplayFor(modelItem => item.Puntos)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  },new {@class ="btn btn-succces"}) |
+                <!--This is the new thing that i change, becase i was too lazy for search the correct word in google-->
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  },new {@class ="btn btn-succcess"}) |
                     @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-info"}) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
